@@ -1,0 +1,54 @@
+<template>
+<div class="twoot-item" @click="favTwoot(twoot.id)">
+    <div class="user_profile_twoot">
+        <div class="twoot-item_user">
+            @{{ username }}
+        </div>
+        <div class="twoot-item_content">
+            {{ twoot.content }}
+        </div>
+    </div>
+</div>
+</template>
+
+<script>
+export default {
+    name: 'TwootItem',
+    props: {
+        username: {
+            type: String,
+            required: true,
+        },
+        twoot: {
+            type: Object,
+            required: true,
+        }
+    },
+    methods: {
+        favTwoot(id) {
+            this.$emit('favourite', id);
+        }
+    }
+}
+</script>
+
+<style>
+.twoot-item {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #DFE3E8;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin: 5px;
+}
+
+.twoot-item:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.twoot-item_user {
+    font-weight: bold;
+}
+</style>
