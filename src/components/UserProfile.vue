@@ -8,7 +8,7 @@
         <div class="user-profile_follower-count">
             <strong>Followers: </strong> {{ followers }}
         </div>
-        <form class="class-profile_create-twoot" @submit.prevent='createNewTwoot'>
+        <form class="user-profile_create-twoot" @submit.prevent='createNewTwoot'>
             <label for="newTwoot"><strong>New Twoot</strong></label>
             <textarea id="newTwoot" rows="4" v-model='newTwootContent' />
 
@@ -98,6 +98,7 @@ export default {
                     id: this.user.twoots.length + 1,
                     content: this.newTwootContent
                 })
+                this.newTwootContent = '';
             }
         },
         followUser() {
@@ -116,7 +117,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .user-profile {
     display: grid;
     grid-template-columns: 1fr 3fr;
