@@ -1,4 +1,5 @@
-# twotter
+# Twitter-like app
+## Developed using vueJs, Express & vuex
 
 ## Project setup
 ```
