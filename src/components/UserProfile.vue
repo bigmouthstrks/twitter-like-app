@@ -35,7 +35,7 @@ export default {
             followers: 0,
             user: {
                 id: 1,
-                username: 'bigtmouthstrks',
+                username: 'bigmouthstrks',
                 firstName: 'Benjamin',
                 lastName: 'Caceres',
                 email: 'benjamin.caceres.ra@gmail.com',
@@ -57,27 +57,9 @@ export default {
         }
     },
     methods: {
-        createNewTwoot() {
-            if (this.newTwootContent && this.selectedTwootType !== 'draft') {
-                this.user.twoots.unshift({
-                    id: this.user.twoots.length + 1,
-                    content: this.newTwootContent
-                })
-                this.newTwootContent = '';
-            }
+        addTwoot(twoot) {
+            this.user.twoots.unshift({ id: this.user.twoots.length + 1, content: twoot })
         },
-        followUser() {
-            this.followers++;
-        },
-        unfollowUser() {
-            this.followers--;
-        },
-        toggleFavourite(id) {
-            console.log(`Favourite twoot #${id}`);
-        }
-    },
-    mounted() {
-        this.followUser();
     }
 }
 </script>
