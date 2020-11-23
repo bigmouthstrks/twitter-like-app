@@ -41,7 +41,7 @@ export default {
     box-sizing: border-box;
     cursor: pointer;
     transition: all 0.25s ease;
-    margin: 5px;
+    margin: 15px 5px 5px 15px;
 
     &:hover {
         transform: scale(1.05, 1.05);

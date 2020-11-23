@@ -1,7 +1,15 @@
 <template>
-<div id='app'>
-    <UserProfile />
-</div>
+    <div id='app'>
+        <nav>
+            <div class="navigation_logo">
+                Twotter
+            </div>
+            <div class="navigation_user">
+                {{ user.username }}
+            </div>
+        </nav>
+        <UserProfile />
+    </div>
 </template>
 
 <script>
@@ -9,8 +17,13 @@ import UserProfile from './components/UserProfile.vue';
 
 export default {
     name: 'App',
-    components: {
-        UserProfile
+    components: { UserProfile },
+    data(){
+        return {
+            user: {
+                username: 'bigmouthstrks'
+            }
+        }
     }
 }
 </script>
@@ -23,5 +36,19 @@ export default {
     color: #2C3E50;
     min-height: 100vh;
     background-color: #F3F5FA;
+
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 5%;
+        background-color: lightseagreen;
+        color: white;
+
+        .navigation_logo{
+            font-weight: bold;
+            font-size: 24px;
+        }
+    }
 }
 </style>
