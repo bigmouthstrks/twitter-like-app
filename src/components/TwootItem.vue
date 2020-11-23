@@ -24,11 +24,6 @@ export default {
             required: true,
         }
     },
-    methods: {
-        favTwoot(id) {
-            this.$emit('favourite', id);
-        }
-    }
 }
 </script>
 
